@@ -1,14 +1,49 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" routerLink="/home" routerLinkActive="active" href="#home">Home</a>
+    <a class="nav-link" data-toggle="tab" routerLink="/home" routerLinkActive="active" href="#home">Home</a>
   </li>
   <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" routerLink="/services" routerLinkActive="active" href="#services">Data Binding</a>
+    <div class="btn-group">
+      <a class="nav-link" data-toggle="tab" role="button" routerLink="/services" routerLinkActive="active"
+        href="#services">Data Binding</a>
+      <button type="button" class="btn  dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only"></span>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">One-way binding</a>
+        <a class="dropdown-item" href="#">Two-way binding</a>
+      </div>
+    </div>
   </li>
   <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" routerLink="/accountLog" routerLinkActive="active" href="#accountLog">Data sharing</a>
+    <div class="btn-group">
+      <a class="nav-link" data-toggle="tab" role="button" routerLink="/services" routerLinkActive="active"
+        href="#services">Data sharing</a>
+      <button type="button" class="btn  dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only"></span>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Parnet-child sharing</a>
+        <a class="dropdown-item" href="#">Siblings sharing</a>
+        <a class="dropdown-item" href="#">Global share</a>
+      </div>
+    </div>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" routerLink="/accountLog" routerLinkActive="active" href="#accountLog">Forms</a>
-</li>
+    <div class="btn-group">
+      <a class="nav-link" data-toggle="tab" role="button" routerLink="/services" routerLinkActive="active"
+        href="#services">Forms</a>
+      <button type="button" class="btn  dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only"></span>
+      </button>
+      <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Reactiv forms</a>
+        <a class="dropdown-item" href="#">Template-driven forms</a>
+        <a class="dropdown-item" href="#">Validation</a>
+      </div>
+    </div>
+  </li>
 </ul>
