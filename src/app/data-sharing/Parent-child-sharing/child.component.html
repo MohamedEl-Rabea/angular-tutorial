@@ -1,0 +1,11 @@
+<div class="form-group">
+        <div class="alert alert-primary" role="alert">
+                Parent passed message: {{message}}
+            </div>
+</div>
+<div class="form-group">
+    <label for="parnentMessageInput">Child Message</label>
+    <input type="text" class="form-control" id="parnentMessageInput" placeholder="Enter message"
+        (input)="setChildMessage($event)">
+    <input type="button" class="btn btn-primary" (click)="sendMessageToParnet()" value="Send To Parent" />
+</div>

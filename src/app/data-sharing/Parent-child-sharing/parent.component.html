@@ -1,0 +1,11 @@
+<div class="form-group">
+    <label for="parnentMessageInput">Parnet Message</label>
+    <input type="text" class="form-control" id="parnentMessageInput" placeholder="Enter message"
+        [(ngModel)]="parentMessage">
+    <small class="form-text text-muted">While you are typing your parnet message it pssaed to child message</small>
+    <div class="alert alert-primary" role="alert">
+        Child passed message: {{childPassedMessage}}
+    </div>
+</div>
+<hr />
+<child-component [message]="parentMessage" (messageEvent)="handleMessageEvent($event)"></child-component>
