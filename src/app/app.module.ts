@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DataSharingModule } from './data-sharing/data-sharing.module';
+import { FormsModule } from './forms/forms.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DataSharingModule } from './data-sharing/data-sharing.module';
   imports: [
     BrowserModule,
     DataSharingModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

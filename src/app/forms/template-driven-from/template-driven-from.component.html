@@ -1,0 +1,39 @@
+<form #userForm="ngForm" (submit)="onSubmit()">
+  <div class="form-group">
+    <label for="exampleInputUserName">User name</label>
+    <input type="text" name="userName" class="form-control" id="exampleInputUserName" aria-describedby="userNameHelp"
+      placeholder="Enter username" [(ngModel)]="model.userName" #spy required>
+    <small id="userNameHelp" class="form-text text-muted">This will be your public name {{spy.className}}.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Enter email" [(ngModel)]="model.email" required>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+      [(ngModel)]="model.password" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Gender</label>
+    <select class="form-control" name="gender" id="exampleFormControlSelect1" [(ngModel)]="model.gender" required>
+      <option *ngFor="let gender of genderList" [value]="gender">{{gender}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPhone">Phone</label>
+    <input type="phone" name="phone" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp"
+      placeholder="Enter phone" [(ngModel)]="model.phone">
+    <small id="phoneHelp" class="form-text text-muted">We'll never share your phone with anyone else.</small>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!userForm.form.valid">Submit</button>
+  <button type="button" class="btn btn-secondary" (click)="userForm.reset()">Reset</button>
+</form>
+<div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+      {{diagnostics}}
+  </div>
+</div>
