@@ -2,7 +2,7 @@
   <div class="form-group">
     <label for="exampleInputUserName">User name</label>
     <input type="text" name="userName" class="form-control" id="exampleInputUserName" aria-describedby="userNameHelp"
-      placeholder="Enter username" [(ngModel)]="model.userName" #spy required>
+      placeholder="Enter username" [(ngModel)]="model.userName" #spy required appNameForbidden='bob'>
     <small id="userNameHelp" class="form-text text-muted">This will be your public name {{spy.className}}.</small>
   </div>
   <div class="form-group">

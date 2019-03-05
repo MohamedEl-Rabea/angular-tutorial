@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+.has-error{
+    border-left: 5px solid red !important;
+}
+
+.valid-input{
+    border-left: 5px solid green ;
+}
+
+.label-error{
+    color: red;
+}
+
+.text-center{
+    text-align: center;
+}
