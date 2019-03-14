@@ -1,0 +1,22 @@
+{
+    "employees": [
+        {
+            "id": "1",
+            "name": "Mohamed rabea",
+            "address": "Egypt - cairo - nasr city",
+            "email": "test@test.com",
+            "skills": [
+                {
+                    "skillName": "C#",
+                    "experience": "2",
+                    "proficiency": "beginner"
+                },
+                {
+                    "skillName": "javaScript",
+                    "experience": "2",
+                    "proficiency": "intermediate"
+                }
+            ]
+        }
+    ]
+}

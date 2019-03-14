@@ -19,14 +19,14 @@
         <label for="exampleFormControlSelect1">Contacts prefrences: </label>
         <br>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" formControlName="contactsPrefrences" id="inlineRadio1"
+          <input class="form-check-input" type="radio" formControlName="contactsPrefrences" id="inlineRadioEmail"
             value="email">
-          <label class="form-check-label" for="inlineRadio1">Email</label>
+          <label class="form-check-label" for="inlineRadioEmail">Email</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" formControlName="contactsPrefrences" id="inlineRadio2"
+          <input class="form-check-input" type="radio" formControlName="contactsPrefrences" id="inlineRadioPhone"
             value="phone">
-          <label class="form-check-label" for="inlineRadio2">Phone</label>
+          <label class="form-check-label" for="inlineRadioPhone">Phone</label>
         </div>
       </div>
       <div class="form-group">
@@ -52,6 +52,45 @@
       </div>
       <hr />
     </div>
+    <h2>Skills array</h2>
+    <div formArrayName="skills" *ngFor="let skillGroup of employeeForm.get('skills').controls; let i = index">
+      <div [formGroupName]="i">
+        <div class="form-group">
+          <label for="exampleInputPassword1">Skill</label>
+          <input type="text" class="form-control valid-input" placeholder="Enter skill name" formControlName="skillName"
+            [ngClass]="{'has-error': skillGroup.get('skillName').errors && skillGroup.get('skillName').touched}">
+          <small class="label-error" *ngIf="skillGroup.get('skillName').errors && skillGroup.get('skillName').touched">
+            Skill name is required
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Years of experience</label>
+          <input type="text" class="form-control valid-input" placeholder="Enter years of experience"
+            formControlName="experience">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Proficiency: </label>
+          <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="proficiency" name="proficiency" id="Beginner"
+              value="beginner" required>
+            <label class="form-check-label" for="Beginner">Beginner</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="proficiency" name="proficiency"
+              id="Intermediate" value="intermediate" required>
+            <label class="form-check-label" for="Intermediate">Intermediate</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="proficiency" name="proficiency"
+              id="Professional" value="professional" required>
+            <label class="form-check-label" for="Professional">Professional</label>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <hr />
     <div class="form-group">
       <label for="exampleFormControlSelect1">Gender: </label>
       <br>

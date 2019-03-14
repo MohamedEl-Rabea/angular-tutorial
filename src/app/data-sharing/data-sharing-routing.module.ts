@@ -10,8 +10,7 @@ const dataSharingRoutes: Routes = [
 ]
 
 @NgModule({
-    imports: [RouterModule.forChild(dataSharingRoutes)],
-    exports: [RouterModule]
+    imports: [RouterModule.forChild(dataSharingRoutes)]
 })
 export class DataSharingRoutingModule {
 }

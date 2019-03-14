@@ -1,0 +1,61 @@
+<div class="row">
+  <form [formGroup]="employeeForm" (submit)="handleSubmit()" class="col-8">
+    <div class="form-group">
+      <label class="form-control-label" for="exampleInputUserName">Full Name: </label>
+      <input type="text" class="form-control valid-input"
+        placeholder="Enter fullname" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Address</label>
+      <input type="text" class="form-control valid-input" placeholder="Enter address" formControlName="address">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input type="text" class="form-control valid-input" placeholder="Enter address" formControlName="email">
+    </div>
+    <h2>Skills array</h2>
+    <div formArrayName="skills" *ngFor="let skillGroup of employeeForm.get('skills').controls; let i = index">
+      <div [formGroupName]="i">
+        <div class="form-group">
+          <label for="exampleInputPassword1">Skill</label>
+          <input type="text" class="form-control valid-input" placeholder="Enter skill name"
+            formControlName="skillName">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Years of experience</label>
+          <input type="text" class="form-control valid-input" placeholder="Enter years of experience"
+            formControlName="experienceInYears">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Proficiency: </label>
+          <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="proficiency" name="proficiency" id="Beginner"
+              value="beginner" >
+            <label class="form-check-label" for="Beginner">Beginner</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="proficiency" name="proficiency"
+              id="Intermediate" value="intermediate" >
+            <label class="form-check-label" for="Intermediate">Intermediate</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="proficiency" name="proficiency"
+              id="Professional" value="professional" >
+            <label class="form-check-label" for="Professional">Professional</label>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group mr-2" role="group">
+        <button type="submit" class="btn btn-success" [disabled]="employeeForm.invalid">Submit</button>
+      </div>
+      <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-secondary" (click)="employeeForm.reset()">Reset</button>
+      </div>
+    </div>
+  </form>
+</div>

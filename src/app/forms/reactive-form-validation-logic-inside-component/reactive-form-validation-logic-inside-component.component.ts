@@ -23,7 +23,10 @@ export class ReactiveFormValidationLogicInsideComponentComponent implements OnIn
         confirmEmail: ['', [Validators.required]],
         contactsPrefrences: ['email']
       }, { validators: confirmEmail }),
-      gender: ['', Validators.required]
+      gender: ['', Validators.required],
+      skills: this.formBuilder.array([
+        this.addNewSkillGroup()
+      ])
     });
 
     this.employeeForm.valueChanges.subscribe(data => {
@@ -46,6 +49,14 @@ export class ReactiveFormValidationLogicInsideComponentComponent implements OnIn
       emailControl.updateValueAndValidity();
       phoneControl.updateValueAndValidity();
       confirmEmailControl.updateValueAndValidity();
+    });
+  }
+
+  addNewSkillGroup() {
+    return this.formBuilder.group({
+      skillName: ['', Validators.required],
+      experience: ['', Validators.required],
+      proficiency: ['', Validators.required]
     });
   }
 
